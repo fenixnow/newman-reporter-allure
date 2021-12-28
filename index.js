@@ -391,7 +391,7 @@ class AllureReporter {
         const parentName = item.parent && item.parent() && item.parent().name ? item.parent().name : "";
         const folderOrEmpty = (!parentName || parentName === this.options.collection.name) ? "" : parentName + "/";
         const iteration = cursor && cursor.cycles > 1 ? "/" + cursor.iteration : "";
-        return this.escape(folderOrEmpty + item.name + iteration);
+        return this.escape(folderOrEmpty + item.name + iteration + 132132);
     }
 
     escape(string) {
