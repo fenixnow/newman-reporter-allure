@@ -391,7 +391,7 @@ class AllureReporter {
         const parentName = item.parent && item.parent() && item.parent().name ? item.parent().name : "";
         const folderOrEmpty = (!parentName || parentName === this.options.collection.name) ? "" : parentName + "/";
         const iteration = cursor && cursor.cycles > 1 ? "/" + cursor.iteration : "";
-        return this.escape(folderOrEmpty + item.name + iteration + 132132);
+        return this.escape(folderOrEmpty + item.name + iteration);
     }
 
     escape(string) {
@@ -438,7 +438,7 @@ class AllureReporter {
             .replaceAll("|0x0434", "д")
             .replaceAll("|0x0435", "е")
             .replaceAll("|0x0436", "ж")
-            .replaceAll("|0x0437", "з")
+            .replaceAll("0x0437", "з")
             .replaceAll("|0x0438", "и")
             .replaceAll("|0x0439", "й")
             .replaceAll("|0x043a", "к")
